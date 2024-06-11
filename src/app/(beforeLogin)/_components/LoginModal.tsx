@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import styles from "./LoginModal.module.css";
+import styles from "./login.module.css";
 
 const Page = () => {
   const [id, setId] = useState();
