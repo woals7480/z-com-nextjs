@@ -5,6 +5,8 @@ import Link from "next/link";
 import Image from "next/image";
 import NavMenu from "@/app/(afterLogin)/_components/NavMenu";
 import LogoutButton from "@/app/(afterLogin)/_components/LogoutButton";
+import TrendSection from "@/app/(afterLogin)/_components/TrendSection";
+import FollowRecommend from "@/app/(afterLogin)/_components/FollowRecommend";
 
 const AfterLoginLayout = ({ children }: { children: ReactNode }) => {
   return (
@@ -43,12 +45,12 @@ const AfterLoginLayout = ({ children }: { children: ReactNode }) => {
                 <input type="search" />
               </form>
             </div>
-            {/* <TrendSection /> */}
+            <TrendSection />
             <div className={styles.followRecommend}>
               <h3>팔로우 추천</h3>
-              {/* <FollowRecommend />
               <FollowRecommend />
-              <FollowRecommend /> */}
+              <FollowRecommend />
+              <FollowRecommend />
             </div>
           </section>
         </div>
