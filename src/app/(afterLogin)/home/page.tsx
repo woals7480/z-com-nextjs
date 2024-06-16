@@ -1,7 +1,7 @@
 import styles from "./home.module.css";
 import Tab from "@/app/(afterLogin)/home/_components/Tab";
 import TabProvider from "@/app/(afterLogin)/home/_components/TabProvider";
-import PostForm from "@/app/(afterLogin)/home/_component/PostForm";
+import PostForm from "@/app/(afterLogin)/home/_components/PostForm";
 import Post from "@/app/(afterLogin)/_component/Post";
 
 const Home = () => {
@@ -9,7 +9,7 @@ const Home = () => {
     <main className={styles.main}>
       <TabProvider>
         <Tab />
-        {/* <PostForm /> */}
+        <PostForm />
         {/* <Post />
         <Post />
         <Post />
