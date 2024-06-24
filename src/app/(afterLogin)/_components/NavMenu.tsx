@@ -1,15 +1,15 @@
 "use client";
 
-import Link from "next/link";
-import { useSelectedLayoutSegment } from "next/navigation";
 import styles from "./navMenu.module.css";
+import { useSelectedLayoutSegment } from "next/navigation";
+import Link from "next/link";
 
-const NavMenu = () => {
+export default function NavMenu() {
   const segment = useSelectedLayoutSegment();
-
+  console.log(segment);
   const me = {
     // 임시로 내 정보 있는것처럼
-    id: "woals7480",
+    id: "zerohch0",
   };
 
   return (
@@ -158,6 +158,4 @@ const NavMenu = () => {
       )}
     </>
   );
-};
-
-export default NavMenu;
+}
