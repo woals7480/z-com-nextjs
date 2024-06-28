@@ -2,7 +2,7 @@
 
 import { redirect } from "next/navigation";
 
-export default async (prevState: any, formData: FormData) => {
+const onSubmit = async (prevState: any, formData: FormData) => {
   if (!formData.get("id") || !(formData.get("id") as string)?.trim()) {
     return { message: "no_id" };
   }
@@ -44,3 +44,5 @@ export default async (prevState: any, formData: FormData) => {
     redirect("/home"); // try/catch문 안에서 X
   }
 };
+
+export default onSubmit;
