@@ -11,13 +11,14 @@ export default function LogoutButton() {
   const { data: me } = useSession();
 
   const onLogout = () => {
-    signOut({redirect: false})
-      .then(() => {
-       router.replace('/') ;
-    })
+    signOut({ redirect: false }).then(() => {
+      router.replace("/");
+    });
   };
 
-  if(!me?.user){
+  console.log(me, "@@");
+
+  if (!me?.user) {
     return null;
   }
 
@@ -29,7 +30,7 @@ export default function LogoutButton() {
       </div>
       <div className={styles.logOutUserName}>
         <div>{me.user?.name}</div>
-        <div>@{me.user?.id}</div>
+        <div>@{me.user?.email}</div>
       </div>
     </button>
   );

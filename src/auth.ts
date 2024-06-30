@@ -49,8 +49,8 @@ import { NextResponse } from "next/server";
 
 export const { handlers, signIn, signOut, auth } = NextAuth({
   pages: {
-    signIn: '/i/flow/login',
-    newUser: '/i/flow/signup',
+    signIn: "/i/flow/login",
+    newUser: "/i/flow/signup",
   },
   providers: [
     Credentials({
@@ -59,32 +59,33 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
         password: {},
       },
       authorize: async (credentials) => {
-          let user;
-          const authResponse = fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/login`, {
-            method: 'POST',
+        let user = null;
+        const authResponse = await fetch(
+          `${process.env.NEXT_PUBLIC_BASE_URL}/api/login`,
+          {
+            method: "POST",
             headers: {
-              'Content-Type': 'application/json'
+              "Content-Type": "application/json",
             },
             body: JSON.stringify({
               id: credentials.id,
               password: credentials.password,
-            })
-          })
-
-          if(!(await authResponse).ok){
-            return null;
+            }),
           }
+        );
 
-          user = (await authResponse).json();
-          
-          // console.log(user,' !!')
-          return user;
-          // return {
-          //   email: user.id,
-          //   name: user.nickname,
-          //   image: user.image,
-          //   ...user,
-          // }
+        if (!authResponse.ok) {
+          return null;
+        }
+
+        user = await authResponse.json();
+
+        return {
+          email: user.id,
+          name: user.nickname,
+          image: user.image,
+          ...user,
+        };
       },
     }),
   ],
