@@ -77,7 +77,14 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
 
           user = (await authResponse).json();
           
+          // console.log(user,' !!')
           return user;
+          // return {
+          //   email: user.id,
+          //   name: user.nickname,
+          //   image: user.image,
+          //   ...user,
+          // }
       },
     }),
   ],
