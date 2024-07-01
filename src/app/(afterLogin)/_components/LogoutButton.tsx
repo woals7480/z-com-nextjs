@@ -16,8 +16,6 @@ export default function LogoutButton() {
     });
   };
 
-  console.log(me, "@@");
-
   if (!me?.user) {
     return null;
   }
