@@ -6,7 +6,7 @@ import Image from "next/image";
 import NavMenu from "@/app/(afterLogin)/_components/NavMenu";
 import LogoutButton from "@/app/(afterLogin)/_components/LogoutButton";
 import TrendSection from "@/app/(afterLogin)/_components/TrendSection";
-import FollowRecommend from "@/app/(afterLogin)/_components/FollowRecommend";
+import FollowRecommendSection from "@/app/(afterLogin)/_components/FollowRecommendSection";
 import RightSearchZone from "@/app/(afterLogin)/_components/RightSearchZone";
 import { auth } from "@/auth";
 import RQProvider from "@/app/(afterLogin)/_components/RQProvider";
@@ -67,9 +67,7 @@ const AfterLoginLayout = async ({
               <TrendSection />
               <div className={styles.followRecommend}>
                 <h3>팔로우 추천</h3>
-                <FollowRecommend />
-                <FollowRecommend />
-                <FollowRecommend />
+                <FollowRecommendSection />
               </div>
             </section>
           </div>
