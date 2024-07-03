@@ -1,8 +1,8 @@
 // type Props = { pageParam?: number };
-export async function getPostRecommends() {
-  const res = await fetch(`http://localhost:9090/api/postRecommends`, {
+export async function getPostFollowing() {
+  const res = await fetch(`http://localhost:9090/api/followingPosts`, {
     next: {
-      tags: ["posts", "recommends"],
+      tags: ["posts", "followings"],
     },
     cache: "no-store",
   });
