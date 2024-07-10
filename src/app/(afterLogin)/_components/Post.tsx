@@ -5,9 +5,7 @@ import relativeTime from "dayjs/plugin/relativeTime";
 import "dayjs/locale/ko";
 import ActionButtons from "@/app/(afterLogin)/_components/ActionButtons";
 import PostArticle from "@/app/(afterLogin)/_components/PostArticle";
-import { faker } from "@faker-js/faker";
 import PostImages from "@/app/(afterLogin)/_components/PostImages";
-import { Post } from "@/model/Post";
 
 dayjs.locale("ko");
 dayjs.extend(relativeTime);
@@ -44,9 +42,13 @@ export default function Post({ noImage, post }: Props) {
             </span>
           </div>
           <div>{target.content}</div>
-          <div className={styles.postImageSection}>
-            <PostImages post={target} />
-          </div>
+          {!noImage && (
+            <div className={styles.postImageSection}>
+              <div>
+                <PostImages post={target} />
+              </div>
+            </div>
+          )}
           <ActionButtons />
         </div>
       </div>

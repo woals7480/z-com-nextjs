@@ -3,8 +3,10 @@
 import { useRouter } from "next/navigation";
 import styles from "./modal.module.css";
 import { useRef, useState } from "react";
+import { useSession } from "next-auth/react";
 
 export default function TweetModal() {
+  const { data: me } = useSession();
   const [content, setContent] = useState();
   const imageRef = useRef<HTMLInputElement>(null);
   const router = useRouter();
@@ -15,11 +17,6 @@ export default function TweetModal() {
   };
   const onClickButton = () => {};
   const onChangeContent = () => {};
-
-  const me = {
-    id: "zerohch0",
-    image: "/5Udwvqim.jpg",
-  };
 
   return (
     <div className={styles.modalBackground}>
